@@ -3,6 +3,7 @@ package me.dio.academia.digital.service;
 import me.dio.academia.digital.entity.Aluno;
 import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.dto.AlunoDto;
+import me.dio.academia.digital.entity.dto.AvaliacaoFisicaDto;
 import me.dio.academia.digital.entity.form.AlunoForm;
 import me.dio.academia.digital.entity.form.AlunoUpdateForm;
 
@@ -15,14 +16,14 @@ public interface IAlunoService {
    * @param form formulário referente aos dados para criação de um Aluno no banco de dados.
    * @return Aluno recém-criado.
    */
-  Aluno create(AlunoForm form);
+  AlunoDto create(AlunoForm form);
 
   /**
    * Retorna um Aluno que está no banco de dados de acordo com seu Id.
    * @param id id do Aluno que será exibido.
    * @return Aluno de acordo com o Id fornecido.
    */
-  Aluno get(Long id);
+  AlunoDto get(Long id);
 
   /**
    * Retorna os Alunos que estão no banco de dados.
@@ -50,7 +51,7 @@ public interface IAlunoService {
    * @param id id do aluno que será recuperada a lista de avaliações
    * @return uma lista com todas as avaliações do aluno de acordo com o Id
    */
-  List<AvaliacaoFisica> getAllAvaliacaoFisicaId(Long id);
+  List<AvaliacaoFisicaDto> getAllAvaliacaoFisicaId(Long id);
 
 
 }

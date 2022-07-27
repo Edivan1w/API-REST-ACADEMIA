@@ -1,15 +1,11 @@
 package me.dio.academia.digital.entity.form;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class AlunoForm {
 
   @NotEmpty(message = "Preencha o campo corretamente.")

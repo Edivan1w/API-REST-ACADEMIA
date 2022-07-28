@@ -10,6 +10,7 @@ import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.dto.AlunoDto;
 import me.dio.academia.digital.entity.dto.AvaliacaoFisicaDto;
 import me.dio.academia.digital.entity.form.AlunoForm;
+import me.dio.academia.digital.entity.form.AvaliacaoFisicaForm;
 
 @Component
 public class AcademiaMapper {
@@ -24,6 +25,10 @@ public class AcademiaMapper {
 	public List<AlunoDto> listaAlunoParaListaDto(List<Aluno> list) {
 		return list.stream().map(this::AlunoParaDto).collect(Collectors.toList());
 	}
+	
+	public Aluno AlunoForParaAluno(AlunoForm form) {
+		return MAPPER_ACADEMIA.map(form, Aluno.class);
+	}
 
 	public AvaliacaoFisicaDto AvaliacaoParaDto(AvaliacaoFisica avaliacao) {
 		return MAPPER_ACADEMIA.map(avaliacao, AvaliacaoFisicaDto.class);
@@ -32,8 +37,10 @@ public class AcademiaMapper {
 	public List<AvaliacaoFisicaDto> listaAvaliacaoParaListaDto(List<AvaliacaoFisica> list) {
 		return list.stream().map(this::AvaliacaoParaDto).collect(Collectors.toList());
 	}
-
-	public Aluno AlunoForParaAluno(AlunoForm form) {
-		return MAPPER_ACADEMIA.map(form, Aluno.class);
+	
+	public AvaliacaoFisica AvaliacaoForParaAvaliacao(AvaliacaoFisicaForm form) {
+		return MAPPER_ACADEMIA.map(form, AvaliacaoFisica.class);
 	}
+
+	
 }

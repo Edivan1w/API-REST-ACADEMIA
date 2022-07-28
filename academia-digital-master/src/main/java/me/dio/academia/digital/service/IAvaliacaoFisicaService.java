@@ -1,6 +1,7 @@
 package me.dio.academia.digital.service;
 
 import me.dio.academia.digital.entity.AvaliacaoFisica;
+import me.dio.academia.digital.entity.dto.AvaliacaoFisicaDto;
 import me.dio.academia.digital.entity.form.AvaliacaoFisicaForm;
 import me.dio.academia.digital.entity.form.AvaliacaoFisicaUpdateForm;
 
@@ -25,7 +26,7 @@ public interface IAvaliacaoFisicaService {
    * Retorna todas as Avaliações Física que estão no banco de dados.
    * @return - Uma lista com todas as Avaliações Física que estão salvas no DB.
    */
-  List<AvaliacaoFisica> getAll();
+  List<AvaliacaoFisicaDto> getAll();
 
   /**
    * Atualiza a avaliação física.
@@ -34,7 +35,7 @@ public interface IAvaliacaoFisicaService {
    * Física no banco de dados.
    * @return - Avaliação Física recém-atualizada.
    */
-  AvaliacaoFisica update(Long id, AvaliacaoFisicaUpdateForm formUpdate);
+  AvaliacaoFisicaDto update(Long id, AvaliacaoFisicaUpdateForm formUpdate);
 
   /**
    * Deleta uma Avaliação Física específica.
